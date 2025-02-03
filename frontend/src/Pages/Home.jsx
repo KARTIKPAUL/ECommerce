@@ -321,9 +321,13 @@ export function Home() {
         <Heading title={"Top Selling"} center={true} />
         <TopSelling topSellingItems={topSellingData} />
 
-        <ProductLayout width="99">
+        {/* <ProductLayout width="99">
             {IsLodingTrending()}
-        </ProductLayout>
+        </ProductLayout> */}
+
+
+
+
         <Heading title={"Top Reviews"} center={true}/>
         <Review/>
         {/* <Heading title={"New Arrivals"} show={true} value={{state: {category: "new"}}}/>
