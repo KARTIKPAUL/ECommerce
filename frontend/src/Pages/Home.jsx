@@ -22,6 +22,7 @@ import LodingSkeletion from "../Components/LodingSkeletion/LodingSkeletion";
 import {Button} from "@nextui-org/react";
 import {AiOutlineArrowRight} from "react-icons/ai";
 import {Swiper, SwiperComponent} from "../Components/Swiper/Swiper";
+import { TopSelling } from "../Components/TopSelling/TopSelling";
 
 export function Home() {
     const navigate = useNavigate()
@@ -149,6 +150,54 @@ export function Home() {
         }
     }
 
+
+    const topSellingData = [
+        {
+            link: oversized,
+            name: "Oversized",
+            onPressed: () => {
+                console.log("Hello")
+                navigate('/Oversized', {state: {category: "Oversized"}})
+            }
+        },
+        {
+            link: windcheater,
+            name: "Windcheater",
+            onPressed: () => {
+                navigate('/Windcheater', {state: {category: "Windcheater"}})
+            }
+        },
+        {
+            link: cargo,
+            name: "Cargo-pants",
+            onPressed: () => {
+                navigate('/Cargo-pants', {state: {category: "Cargo-pants"}})
+            }
+        },
+        {
+            link: socks,
+            name: "Socks",
+            onPressed: () => {
+                navigate('/Socks', {state: {category: "Socks"}})
+            }
+        },
+        {
+            link: shorts,
+            name: "Shorts",
+            onPressed: () => {
+                navigate('/Shorts', {state: {category: "Shorts"}})
+            }
+        },
+        {
+            link: tshirt,
+            name: "Relaxed Shirt",
+            onPressed: () => {
+                navigate('/Relaxed-Shirt', {state: {category: "Relaxed-Shirt"}})
+            }
+        }
+    ];
+
+
     const categories = [
         {
             link: oversized,
@@ -262,28 +311,31 @@ export function Home() {
 
         {/*<Banner/>*/}
         <SwiperComponent/>
-        <Heading title={"Featured"} show={true} value={{state: {category: "featured"}}}/>
+        {/* <Heading title={"Featured"} show={true} value={{state: {category: "featured"}}}/>
         <ProductLayout>
             {IsLodingFeatured()}
-        </ProductLayout>
+        </ProductLayout> */}
         <Heading title={"Categories"} center={true}/>
         <Categories cat={categories}/>
-        <Heading title={"Trending"} show={true} value={{state: {category: "trending"}}}/>
+        
+        <Heading title={"Top Selling"} center={true} />
+        <TopSelling topSellingItems={topSellingData} />
+
         <ProductLayout width="99">
             {IsLodingTrending()}
         </ProductLayout>
         <Heading title={"Top Reviews"} center={true}/>
         <Review/>
-        <Heading title={"New Arrivals"} show={true} value={{state: {category: "new"}}}/>
+        {/* <Heading title={"New Arrivals"} show={true} value={{state: {category: "new"}}}/>
         <ProductLayout width="99">
             {IsLodingArrival()}
-        </ProductLayout>
+        </ProductLayout> */}
         <Heading title={"Reliability"} center={true}/>
         <Highlight1/>
-        <Heading title={"Best Sellers"} show={true} value={{state: {category: "Best"}}}/>
+        {/* <Heading title={"Best Sellers"} show={true} value={{state: {category: "Best"}}}/>
         <ProductLayout width="99">
             {IsLodingBest()}
-        </ProductLayout>
+        </ProductLayout> */}
         <Footer Contact={contact} Follow={follow} Social={social}/>
     </>
 }

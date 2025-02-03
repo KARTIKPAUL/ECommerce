@@ -1,16 +1,33 @@
-.navItem{
+/* Styling for Navbar Links */
+.navItem {
     padding: 5px 10px;
     color: black;
-    border:2px solid transparent;
+    border: 2px solid transparent;
     -webkit-transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
     transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+    display: inline-block;  /* Ensures the link is inline and doesn't break layout */
 }
-.navItem:hover{
+
+/* On Hover, Increase Font Size and Weight */
+.navItem:hover {
     font-weight: 900;
     font-size: 20px;
     transition: all 0.4s cubic-bezier(.5, .24, 0, 1);
+    border-color: #000;  /* Optional: Add border color change on hover */
 }
-#EachSearchResult{
+
+/* Ensure Navbar Content stays centered */
+.NavbarContent {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-grow: 1;  /* Ensures it takes up available space */
+    width: 100%;  /* Makes sure it fills the navbar */
+}
+
+/* Search Result Styling */
+#EachSearchResult {
     height: 65px;
     background-color: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -22,6 +39,7 @@
     align-items: center;
     justify-content: space-between;
 }
-#EachSearchResult:hover{
+
+#EachSearchResult:hover {
     background-color: rgba(19, 19, 19, 0.2);
 }
